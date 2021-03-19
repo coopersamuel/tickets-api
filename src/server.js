@@ -1,6 +1,6 @@
 import express from "express";
 import { ApolloServer, gql } from "apollo-server-express";
-import { models } from "./db";
+import resolvers from './resolvers';
 
 const PORT = 4001;
 
@@ -45,26 +45,8 @@ const typeDefs = gql`
 `;
 
 /**
- * TODO: Your task is implementing the resolvers. Go through the README first.
- * TODO: Your resolvers below will need to implement the typedefs given above.
+ * Resolvers are defined in the ./resolvers directory
  */
-
-const resolvers = {
-  Query: {
-    /**
-     * We have implemented this first query for you to set up an initial pattern.
-     */
-    tickets: async (root, args, context) => {
-      return models.Ticket.findAll({
-        where: {
-          parentId: null
-        }
-      });
-    }
-  },
-  Ticket: {},
-  Mutation: {}
-};
 
 const server = new ApolloServer({
   typeDefs,
