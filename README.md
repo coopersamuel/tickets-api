@@ -1,4 +1,4 @@
-# Matter Backend Engineer Take-Home Exercise
+# Tickets API
 
 Minimal GraphQL server implementing a recursive "Tickets" model. Tickets can belong to or be parents of other tickets.
 
